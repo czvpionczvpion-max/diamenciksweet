@@ -3,29 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DIAMENCIK · Daily Cashback</title>
-  <meta name="description" content="DIAMENCIK: Daily Cashback w SweetReels. Depozyt od 50 zł, cashback od 10 zł, przykład 200 zł straty to ok. 40 zł następnego dnia." />
+  <title>DIAMENCIK · 20% cashbacku codziennie</title>
+  <meta name="description" content="Bonus powitalny SweetReels: 20% cashbacku każdego dnia od strat netto. Zwrot wpada następnego dnia po północy." />
+  <meta name="theme-color" content="#0b0612" />
   <link rel="icon" href="assets/general.hero-header-logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="scene" aria-hidden="true">
-    <span class="blob blob-a"></span>
-    <span class="blob blob-b"></span>
-    <span class="blob blob-c"></span>
-    <span class="sq sq1"></span>
-    <span class="sq sq2"></span>
-    <span class="sq sq3"></span>
-    <span class="sq sq4"></span>
-    <span class="sq sq5"></span>
-    <span class="spark s1"></span>
-    <span class="spark s2"></span>
-    <span class="spark s3"></span>
-    <span class="spark s4"></span>
-    <span class="spark s5"></span>
+    <canvas id="stars"></canvas>
+    <span class="neon-line nl1"></span>
+    <span class="neon-line nl2"></span>
+    <span class="neon-line nl3"></span>
   </div>
 
   <header class="topbar">
@@ -34,8 +26,8 @@
       <span class="brand-name">DIAMENCIK</span>
     </a>
     <nav class="topnav" aria-label="Nawigacja">
-      <a class="btn btn--ghost btn--sm" href="#bonus">Bonus</a>
-      <a class="btn btn--candy btn--sm" href="https://1.playhere.win/HWvbzY" target="_blank" rel="noopener noreferrer">ODBIERZ BONUSY</a>
+      <a class="btn btn--ghost btn--sm" href="#zasady">Zasady</a>
+      <a class="btn btn--neon btn--sm" href="https://1.playhere.win/HWvbzY" target="_blank" rel="noopener noreferrer">ODBIERZ BONUSY</a>
     </nav>
   </header>
 
@@ -44,53 +36,39 @@
       <div class="hero-inner">
         <div class="hero-photo">
           <img src="assets/zdj.jpg" alt="DIAMENCIK" class="photo-img" width="800" height="800" />
+          <span class="photo-tag">DIAMENCIK</span>
         </div>
 
         <div class="hero-copy">
-          <p class="kicker">DIAMENCIK · SweetReels</p>
-          <h1 id="hero-title">Daily Cashback</h1>
-          <p class="hero-lead">Zwrot od strat z danego dnia. Liczy się od północy do północy, a pieniądze wpadają następnego dnia.</p>
-
-          <article class="tile" id="bonus">
-            <p class="tile-kicker">Przykład</p>
-            <p class="tile-offer">ok. 40 zł</p>
-            <p class="tile-sub">ze straty netto 200 zł</p>
-
-            <ul class="facts">
-              <li><strong>50 zł</strong><span>min. depozyt</span></li>
-              <li><strong>10 zł</strong><span>min. cashback</span></li>
-              <li><strong>x8</strong><span>obrót</span></li>
-              <li><strong>3 dni</strong><span>na obrót</span></li>
-            </ul>
-
-            <div class="promo-box">
-              <div class="promo-box-copy">
-                <span class="promo-box-label">Kod</span>
-                <span class="promo-code"></span>
-              </div>
-              <button type="button" class="btn btn--ghost btn--sm promo-copy" aria-label="Kopiuj kod">
-                Kopiuj
-              </button>
-            </div>
-
-            <a class="btn btn--candy btn--lg" href="https://1.playhere.win/HWvbzY" target="_blank" rel="noopener noreferrer">
-              ODBIERZ BONUSY
-            </a>
-          </article>
+          <p class="badge"><span class="badge-dot"></span>Bonus powitalny · SweetReels</p>
+          <h1 id="hero-title">
+            <span class="neon">20%</span>
+            <span class="h1-sub">cashbacku codziennie</span>
+          </h1>
+          <p class="hero-lead">Słodka oferta powitalna. Zwrot od strat netto wpada następnego dnia po północy.</p>
+          <ul class="facts">
+            <li><strong>co dzień</strong><span>00:01–23:59</span></li>
+            <li><strong>do 15 min</strong><span>po północy</span></li>
+            <li><strong>od 50 zł</strong><span>depozyt</span></li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn--neon btn--lg" href="https://1.playhere.win/HWvbzY" target="_blank" rel="noopener noreferrer">ODBIERZ BONUSY</a>
+            <a class="text-link" href="#zasady">Zasady cashbacku</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section notes" aria-labelledby="notes-title">
+    <section class="section" id="zasady" aria-labelledby="rules-title">
       <div class="section-inner">
-        <h2 id="notes-title">W skrócie</h2>
-        <ul class="note-list">
-          <li>Każdego dnia, od 00:01 do 23:59. Liczą się straty netto z tego okna.</li>
-          <li>Cashback wpada następnego dnia, w ciągu 15 minut po północy.</li>
-          <li>Żeby wszedł, depozyt od 50 zł i strata netto od 50 zł. Minimum zwrotu to 10 zł.</li>
-          <li>Obrót x8 w 3 dni. Po tym czasie nieobrócone środki przepadają.</li>
-          <li>Przy bonusie max stawka to 25 zł na rundę albo 2 zł na linię.</li>
-        </ul>
+        <h2 id="rules-title">Zasady cashbacku</h2>
+        <dl class="rules">
+          <div><dt>Liczy się</dt><dd>Strata netto z jednego dnia.</dd></div>
+          <div><dt>Przykład</dt><dd>200 zł straty to ok. 40 zł zwrotu.</dd></div>
+          <div><dt>Minimum</dt><dd>Zwrot od 10 zł, przy stracie od 50 zł.</dd></div>
+          <div><dt>Obrót</dt><dd>x8 w 3 dni. Potem reszta przepada.</dd></div>
+          <div><dt>Max stawka</dt><dd>25 zł na rundę albo 2 zł na linię.</dd></div>
+        </dl>
       </div>
     </section>
   </main>
