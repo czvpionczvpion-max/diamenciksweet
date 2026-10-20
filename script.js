@@ -4,7 +4,7 @@
 
   const ctx = canvas.getContext("2d");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const tones = ["255, 62, 165", "178, 107, 255", "252, 204, 66", "255, 236, 248"];
+  const tones = ["212, 176, 106", "243, 226, 179", "255, 248, 230", "140, 108, 58"];
   const pointer = { x: -9999, y: -9999 };
 
   let w = 0;
