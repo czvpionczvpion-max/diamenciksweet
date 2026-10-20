@@ -57,57 +57,25 @@ a {
 }
 
 #stars {
+  display: none;
+}
+
+.casino-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.35;
+  object-fit: cover;
+  object-position: 50% 22%;
 }
 
-.roulette,
-.casino-chip,
-.casino-slot {
+.scene::after {
+  content: "";
   position: absolute;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.roulette {
-  width: 520px;
-  height: 520px;
-  left: -300px;
-  top: 11%;
-  filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.45));
-}
-
-.rotor,
-.ball-orbit {
-  transform-box: view-box;
-  transform-origin: center;
-}
-
-.rotor {
-  animation: spin 42s linear infinite;
-}
-
-.ball-orbit {
-  animation: spin 8.5s linear infinite reverse;
-}
-
-.casino-chip {
-  width: 112px;
-  height: 112px;
-  right: max(24px, calc(50% - 460px));
-  bottom: 12%;
-  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.4));
-}
-
-.casino-slot {
-  width: 148px;
-  height: auto;
-  right: max(28px, calc(50% - 500px));
-  top: 15%;
-  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.45));
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 6, 5, 0.62) 0%, rgba(7, 6, 5, 0.28) 24%, rgba(7, 6, 5, 0.4) 58%, rgba(7, 6, 5, 0.88) 100%),
+    radial-gradient(ellipse 80% 60% at 50% 34%, rgba(7, 6, 5, 0.12), rgba(7, 6, 5, 0.55) 78%);
 }
 
 main,
@@ -312,11 +280,21 @@ main,
 }
 
 .offer {
+  position: relative;
   width: min(100%, 460px);
   margin-top: 26px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.offer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -8px -6px 0;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(7, 6, 5, 0.72), rgba(7, 6, 5, 0.28) 72%, transparent 100%);
 }
 
 .offer > * {
@@ -489,10 +467,6 @@ main,
   line-height: 1.6;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
 @keyframes ctaGlow {
   0%, 100% { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(240, 212, 138, 0.35), 0 0 18px rgba(208, 18, 36, 0.5), 0 12px 28px rgba(0, 0, 0, 0.4); }
   50% { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 0 1px rgba(240, 212, 138, 0.7), 0 0 34px rgba(255, 60, 80, 0.9), 0 12px 28px rgba(0, 0, 0, 0.4); }
@@ -517,25 +491,6 @@ main,
 
   .poster {
     width: min(58vw, 210px);
-  }
-
-  .casino-slot {
-    display: none;
-  }
-
-  .casino-chip {
-    width: 76px;
-    height: 76px;
-    right: 12px;
-    top: 132px;
-    bottom: auto;
-  }
-
-  .roulette {
-    width: 440px;
-    height: 440px;
-    left: -280px;
-    top: 16%;
   }
 }
 
